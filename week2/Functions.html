@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Functions</title>
+    </head>
+    <body>
+        <h1>Passing and returning function parameters.</h1>
+        <p>Perform an Area Calculation</p>
+		<p>The width is 3 and the height is 5.</p>
+		<script>
+			function getArea(){ 
+				var result = calcArea(3,getHeight(5));
+				alert("The area is: " +result);
+			}
+			function getHeight(height){
+				return height;
+			}
+			function calcArea(width, height){ 
+				var area = width * height;
+				return area;
+			}
+			
+			var value_1 = 0; // global variable
+			function globalVars(){
+				this.value_1 = 1; //global var assigned new value.
+				var value_1 = 2; //local var
+				alert("Global variable: "+this.value_1); //this keyword refers to global var.
+				alert("local variable: "+value_1);
+			}
+			function localVars(){ //local variable
+				var value_2 = 2;
+				alert("Global var is: "+this.value_1+" and Local var is: "+value_2);
+			}			
+			function notGlobalVars(){
+				alert("value_2 which is local to another function has a value of: "+value_2); // nothing happens - no popup as value_2 is local to another function and is not global.
+			}
+			
+			
+		</script>
+		<button id="b1" onclick="getArea()">Get Area</button>
+		<button id="b2" onclick="globalVars()">Global</button>
+		<button id="b3" onclick="localVars()">Local</button>
+		<button id="b4" onclick="notGlobalVars()">Not Global</button>		
+    </body>
+</html>

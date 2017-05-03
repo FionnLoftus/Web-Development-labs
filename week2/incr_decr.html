@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Functions</title>
+    </head>
+    <body>
+        <h1>Pre and Post Increment example</h1>
+        
+		<p>Check the Javascript and click on the buttons for alerts.</p>
+		<br><br>
+		<button id="b1" onclick="postIncr()">Post Increment</button><br><br>	
+		<button id="b1" onclick="preIncr()">Pre Increment</button><br><br>	
+
+		<br> <br>
+		<h3>Explanation:</h3>
+		<p>If the operator appears before the variable, the value is modified 
+		before the expression is evaluated. If the operator appears after the variable, 
+		the value is modified after the expression is evaluated. In other words, 
+		given j = ++k;, the value of j is the original value of k plus one; 
+		given j = k++;, the value of j is the original value of k, 
+		which is incremented after its value is assigned to j.</p>
+		<br>
+		<br>
+		<a href="https://msdn.microsoft.com/library/26k41698(v=vs.94).aspx" target="_blank">For more details</a>
+		<script>
+			function postIncr(){ 
+				var result = 0;
+				alert("var result = 0; result++; //result is still: "+result++);
+				alert("on checking result after result++ is executed, result is now: "+result);
+			}			
+			function preIncr(){ 
+				var result = 0;
+				alert("var result = 0; ++result; //result is now: "+ ++result);
+				alert("on checking result after ++result is executed, result is still: "+result);
+			}			
+			
+		</script>
+    </body>
+</html>

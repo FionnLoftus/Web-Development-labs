@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript bound/free variable</title>
+    </head>
+    <body>
+        <h1>Passing and returning function parameters.</h1>
+        <p>The parameters are variables bound to the function</p>
+		<p>Any variable used within the function is bound to that function</p>
+		<p>If a variable is then returned from the function, it is no longer bound to that function but is now considered free</p>
+		<p>Basically a variable will change from a state of bound or free during runtime</p>
+		<p>A global function is free, but during runtime if used within a function it becomes bound to that function at that moment</p>
+		
+		<script>
+			var i = 1; //global var, currently free
+			function func1(){ 
+				var result = func2(i); //result var is bound to this function. The i var which was free, is now bound to this function as it is used in this function
+				alert("The value returned is: " +result); //result returned from func2(), x was freed from func2, but now is no longer free as it is assigned to bound var result, which means x is now bound.
+			}
+			function func2(x){ //x is bound to this function. Have passed it a global var, which started out as free but now is bound to this function
+				x = x * 2; // x is bound to this function
+				return x; // x is freed from this function, so no longer bound to it.
+			}			
+		</script>
+		<button id="b1" onclick="func1()">Bound / Free</button>
+    </body>
+</html>

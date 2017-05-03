@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript While and Do While</title>
+    </head>
+    <body>
+        <h1>While and Do While Examples</h1>
+        
+		<p>Check the Javascript and click on the buttons for alerts.</p>
+		<br><br>
+		<button id="b1" onclick="whileBtn()">While</button><br><br>	
+		<button id="b1" onclick="doWhileBtn()">Do While</button><br><br>	
+		<script>
+			function whileBtn(){ 
+				var result = 1;
+				while (result == 1) {
+					alert("In while loop just once as condition is met.");
+					result = 2;
+				}
+				while (result == 1) {
+					alert("Never enters this loop as condition is not met. result is 2 and not 1 as tested for.");
+				}
+			}			
+			function doWhileBtn(){ 
+				var result = 1;
+				do{
+					alert("In do while loop just once as condition is not met. Should just see this message once.");
+				}
+				while (result == 0);
+				do{
+					result += 1;
+					alert("Should see this alert twice, as condition is met just once.");
+				}
+				while (result == 2);
+			}				
+		</script>
+    </body>
+</html>
